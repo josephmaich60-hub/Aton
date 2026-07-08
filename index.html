@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Small Question ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#ffeef5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    width:420px;
+}
+
+h1{
+    margin-bottom:15px;
+    color:#ff3b6b;
+}
+
+p{
+    margin-bottom:35px;
+    color:#555;
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+#yes{
+    background:#ff3b6b;
+    color:white;
+    margin-right:20px;
+}
+
+#no{
+    position:absolute;
+    background:#555;
+    color:white;
+}
+
+#result{
+    margin-top:25px;
+    font-size:22px;
+    color:#ff3b6b;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+<h1>I want to meet you ❤️</h1>
+<p>Will you say yes?</p>
+
+<button id="yes">Accept</button>
+<button id="no">Reject</button>
+
+<div id="result"></div>
+</div>
+
+<script>
+
+const no=document.getElementById("no");
+const yes=document.getElementById("yes");
+
+function moveButton(){
+
+const maxX=window.innerWidth-120;
+const maxY=window.innerHeight-60;
+
+const x=Math.random()*maxX;
+const y=Math.random()*maxY;
+
+no.style.left=x+"px";
+no.style.top=y+"px";
+
+}
+
+moveButton();
+
+no.addEventListener("mouseenter",moveButton);
+no.addEventListener("mouseover",moveButton);
+
+yes.addEventListener("click",()=>{
+document.getElementById("result").innerHTML="❤️ Yay! I can't wait to meet you! ❤️";
+no.style.display="none";
+yes.style.display="none";
+});
+
+</script>
+
+</body>
+</html>
